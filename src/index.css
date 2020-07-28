@@ -47,6 +47,9 @@ a {
   color: inherit;
 }
 
+#root {
+  width: 100vw;
+}
 .column-flex {
   display: flex;
   flex-direction: column;

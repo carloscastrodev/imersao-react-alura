@@ -4,16 +4,18 @@ import HighlightVideoPlayer from '../components/HighlightVideoPlayer';
 import useWindowDimensions from '../components/hooks/windowDimensions';
 import GetVideosService from '../services/GetVideosService';
 import VideoCategoryDisplay from '../components/VideoCategoryDisplay';
+import Shell from '../components/shared/Shell';
 
 const Home = () => {
   const getHighlightFromLocalStorage = () => {
     const videoInfo = JSON.parse(localStorage.getItem('chopperflix-hlvideo'));
     if (!videoInfo) {
-      const videoInfo = {
+      const defaultVideo = {
         videoId: 'kIfNZcCw4EI',
         videoTitle: 'One Piece AMV - Illusion (Chopper story)',
       };
-      setHighlightToLocalStorage(videoInfo);
+      setHighlightToLocalStorage(defaultVideo);
+      return defaultVideo;
     }
     return videoInfo;
   };
@@ -25,14 +27,13 @@ const Home = () => {
 
   const [shouldVideoPlay, setShouldVideoPlay] = useState(true);
   const [videosByCategoryList, setVideosByCategoryList] = useState([]);
-  const [currentHighlightedVideo, setCurrentHighlightedVideo] = useState(
-    getHighlightFromLocalStorage(),
-  );
+  const [currentHighlightedVideo, setCurrentHighlightedVideo] = useState(null);
   const { height } = useWindowDimensions();
 
   useEffect(() => {
     const videosByCategory = GetVideosService.execute();
     setVideosByCategoryList(videosByCategory);
+    setCurrentHighlightedVideo(getHighlightFromLocalStorage());
   }, []);
 
   useEffect(() => {
@@ -50,7 +51,6 @@ const Home = () => {
   };
 
   const handleChangeHighlightedVideo = videoInfo => {
-    console.log(videoInfo);
     if (currentHighlightedVideo.videoId !== videoInfo.videoId) {
       setHighlightToLocalStorage(videoInfo);
       setCurrentHighlightedVideo(videoInfo);
@@ -61,10 +61,12 @@ const Home = () => {
   return (
     <>
       <StyledSection firstSection={true}>
-        <HighlightVideoPlayer
-          videoInfo={currentHighlightedVideo}
-          shouldVideoPlay={shouldVideoPlay}
-        />
+        {(currentHighlightedVideo && (
+          <HighlightVideoPlayer
+            videoInfo={currentHighlightedVideo}
+            shouldVideoPlay={shouldVideoPlay}
+          />
+        )) || <Shell bg={'black'} />}
       </StyledSection>
       <StyledSection>
         {videosByCategoryList.map(({ category, videos }) => (

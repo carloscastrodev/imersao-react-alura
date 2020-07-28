@@ -2,11 +2,7 @@ import React from 'react';
 import UnderConstruction from '../components/UnderConstruction';
 
 const NewVideo = () => {
-  return (
-    <>
-      <UnderConstruction />
-    </>
-  );
+  return <UnderConstruction />;
 };
 
 export default NewVideo;

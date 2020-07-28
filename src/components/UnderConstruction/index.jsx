@@ -45,11 +45,13 @@ const UnderConstruction = () => {
         Voltar
       </ButtonLink>
       <div className="image-wrapper">
-        <img
-          alt="Tony Tony Chopper"
-          src={imageToRender}
-          className="aside-image"
-        />
+        {(imageToRender && (
+          <img
+            alt="Tony Tony Chopper"
+            src={imageToRender}
+            className="aside-image"
+          />
+        )) || <div />}
       </div>
     </StyledSection>
   );

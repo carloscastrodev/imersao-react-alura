@@ -4,8 +4,7 @@ import YTApiMessages from './YTApiMessages';
 import useWindowDimensions from '../hooks/windowDimensions';
 
 const HighlightVideoPlayer = ({ videoInfo, shouldVideoPlay }) => {
-  const { videoId } = videoInfo;
-
+  const videoId = videoInfo.videoId;
   const [contentWindow, setContentWindow] = useState(null);
   const { width } = useWindowDimensions();
 

@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  min-height: fit-content;
   min-height: calc(100vh - var(--footerHeight));
-  height: fit-content;
-  padding-top: ${({ firstSection }) => (firstSection && '0') || '1%'};
-  padding-left: ${({ firstSection }) => (firstSection && '0') || '5%'};
-  padding-right: ${({ firstSection }) => (firstSection && '0') || '5%'};
+  height: auto;
+  padding-top: ${({ firstSection }) => (firstSection && '0') || '1vh'};
+  padding-left: ${({ firstSection }) => (firstSection && '0') || '2vw'};
+  padding-right: ${({ firstSection }) => (firstSection && '0') || '2vw'};
+  margin-bottom: ${({ firstSection }) => (firstSection && '3rem') || '2vw'};
   width: 100%;
-  @media (max-width: 1024px) {
-    padding: 0;
-  }
 `;
 
 export default StyledSection;
