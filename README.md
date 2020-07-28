@@ -9,8 +9,8 @@
 Um clone da Netflix utilizando algumas cores da paleta do personagem Tony Tony Chopper do One Piece, baseando-se nas video aulas da
 Imersão React da [Alura](https://www.alura.com.br/)
 
-![Front-Page da aplicação](./.gitassets/readme-header1.png)
-![Front-Page da aplicação](./.gitassets/readme-header1.png)
+![Front-Page da aplicação](./.gitassets/readme-header.png)
+![Front-Page da aplicação](./.gitassets/readme-header2.png)
 
 ## Instalação
 
