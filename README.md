@@ -2,13 +2,14 @@
 
 > Um hub para AMV's legais 😎
 
-![License][https://img.shields.io/badge/license-mit-f282ad]
-![Alura][https://img.shields.io/badge/alura-on-%232a7ae4]
-![React][https://img.shields.io/badge/react-on-%61dbfb]
+![License](https://img.shields.io/badge/license-mit-f282ad)
+![Alura](https://img.shields.io/badge/alura-on-%232a7ae4)
+![React](https://img.shields.io/badge/react-on-%61dbfb)
 Um clone da Netflix utilizando algumas cores da paleta do personagem Tony Tony Chopper do One Piece, baseando-se nas video aulas da
-Imersão React da ![Alura][https://www.alura.com.br/]
+Imersão React da [Alura](https://www.alura.com.br/)
 
-![](header.png)
+![Front-Page da aplicação](.gitassets/readme-header1.png)
+![Front-Page da aplicação](.gitassets/readme-header1.png)
 
 ## Instalação
 
