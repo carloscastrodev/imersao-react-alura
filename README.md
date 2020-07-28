@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using [clean-cra Template](https://github.com/JorgePasco1/cra-template-clean-cra).
+# 📼 Chopperflix
 
-## Available Scripts
+> Um hub para AMV's legais 😎
 
-In the project directory, you can run:
+![License][https://img.shields.io/badge/license-mit-f282ad]
+![Alura][https://img.shields.io/badge/alura-on-%232a7ae4]
+![React][https://img.shields.io/badge/react-on-%61dbfb]
+Um clone da Netflix utilizando algumas cores da paleta do personagem Tony Tony Chopper do One Piece, baseando-se nas video aulas da
+Imersão React da ![Alura][https://www.alura.com.br/]
 
-### `yarn start`
+![](header.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalação
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Clonar esse repositório e rodar um
 
-### `yarn test`
+```
+yarn
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ou
 
-### `yarn build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contato
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Carlos Castro – [Linkedin](https://www.linkedin.com/in/carlos-castro-6623581a8/) – contato-carloscastro@hotmail.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esse projeto está sobre a licença MIT. Veja `LICENSE` para mais informações.
 
-### `yarn eject`
+## Contribuindo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Crie um fork desse repositório (<https://github.com/yourname/yourproject/fork>)
+2. Crie uma branch para a feature proposta (`git checkout -b feature/fooBar`)
+3. Faça um commit com as mudanças (`git commit -am 'Add some fooBar'`)
+4. Dê um push para o GitHub (`git push origin feature/fooBar`)
+5. Crie uma Pull Request e aguarde revisão.
