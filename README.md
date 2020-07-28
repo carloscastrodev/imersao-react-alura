@@ -32,6 +32,14 @@ Carlos Castro – [Linkedin](https://www.linkedin.com/in/carlos-castro-6623581a8
 
 Esse projeto está sobre a licença MIT. Veja `LICENSE` para mais informações.
 
+## ToDo
+
+- Dormir
+
+- Substituir o carrossel por um mais bacana (tentar escrever o código eu mesmo);
+
+- Criar a página de Upload da aplicação
+
 ## Contribuindo
 
 1. Crie um fork desse repositório (<https://github.com/yourname/yourproject/fork>)
