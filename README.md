@@ -44,7 +44,7 @@ Esse projeto está sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## Contribuindo
 
-1. Crie um fork desse repositório (<https://github.com/yourname/yourproject/fork>)
+1. Crie um fork desse repositório (<https://github.com/AdmiralChopper/imersao-react-alura/fork>)
 2. Crie uma branch para a feature proposta (`git checkout -b feature/fooBar`)
 3. Faça um commit com as mudanças (`git commit -am 'Add some fooBar'`)
 4. Dê um push para o GitHub (`git push origin feature/fooBar`)
