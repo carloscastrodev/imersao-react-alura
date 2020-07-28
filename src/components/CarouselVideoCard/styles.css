@@ -1,0 +1,26 @@
+.card-wrapper {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  width: auto;
+  transition: all 0.25s ease-out;
+}
+
+.card-wrapper:hover, .card-wrapper:focus, .card-wrapper:active {
+  transform: scale(1.2);
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 2px var(--contrastLight);
+}
+
+.video-card-image {
+  height: 250px;
+  width: auto;
+  user-select: none;
+}
+
+@media (max-width: 720px) {
+  .video-card-image {
+    height: 18vh;
+    width: auto;
+  }
+}

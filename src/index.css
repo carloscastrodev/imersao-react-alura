@@ -1,15 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
-  color: white;
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--contrast);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary: #fefbfa;
+  --secondary: #f282ad;
+  --contrast: rgb(20, 20, 20);
+  --contrastLight: #9e9e9e;
+  --grayLight: #e2e5e2;
+  --grayMedium: #dadada;
+  --light: #eeeeee;
+  --headerHeight: 56px;
+  --footerHeight: 96px;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--contrast);
+  font-size: 12px;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.no-opacity {
+  opacity: 0;
 }

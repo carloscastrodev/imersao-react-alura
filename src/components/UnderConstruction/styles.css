@@ -1,0 +1,28 @@
+.under-construction-warning {
+  color: var(--secondary);
+  font-size: 2.2rem;
+  text-align: center;
+  user-select: none;
+}
+
+.image-wrapper {
+  height: 42vh;
+  max-height: 420px;
+  width: fit-content;
+  margin-top: 1%;
+}
+
+.aside-image {
+  height: 100%;
+  width: auto;
+  user-select: none;
+}
+
+@media (max-height: 550px) {
+  .under-construction-warning {
+    font-size: 1.4rem;
+  }
+  .image-wrapper {
+    height: 24vh;
+  }
+}
