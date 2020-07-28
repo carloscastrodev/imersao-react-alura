@@ -32,7 +32,7 @@ npm install
 
 Carlos Castro – [Linkedin](https://www.linkedin.com/in/carlos-castro-6623581a8/) – contato-carloscastro@hotmail.com
 
-Esse projeto está sobre a licença MIT. Veja `LICENSE` para mais informações.
+Esse projeto está sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## ToDo
 
