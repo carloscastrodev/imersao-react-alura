@@ -79,9 +79,7 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
             src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&start=0&disablekb=0&rel=0&modestbranding=1&autohide=1&controls=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            className={`yt-iframe-preview ${
-              (shouldPlayVideo && 'show-preview') || 'hide-preview'
-            }`}
+            className={`yt-iframe-preview`}
           ></iframe>
         </div>
       )}
