@@ -72,6 +72,14 @@
   object-fit: fill;
 }
 
+.show-preview {
+  opacity: 1;
+}
+
+.hide-preview {
+  opacity: 0;
+}
+
 .preview-wrapper {
   width: 100%;
   height: 100%;
