@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import YTApiMessages from './YTApiMessages';
+import YTApiMessages from '../../services/YTApiMessages';
 import useWindowDimensions from '../hooks/windowDimensions';
 
 const HighlightVideoPlayer = ({ videoInfo, shouldVideoPlay }) => {

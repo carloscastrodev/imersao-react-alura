@@ -5,7 +5,7 @@ export default {
       videos: [
         {
           videoId: 'kIfNZcCw4EI',
-          videoTitle: 'One Piece AMV - Illusion (Chopper story)',
+          title: 'One Piece AMV - Illusion (Chopper story)',
         },
         {
           videoId: 'iQFjsCpju-0',

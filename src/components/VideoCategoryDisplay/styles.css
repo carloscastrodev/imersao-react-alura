@@ -1,16 +1,17 @@
 .video-category-section {
   height: calc(3.2rem + 1.2 * 250px);
   position: relative;
-  width: 100%;
-  background-color: none;
+  background: none;
   margin-bottom: 5rem;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  overflow: hidden;
 }
 
 .category-title {
   font-size: 2.2rem;
   margin-top: 0;
   margin-bottom: -2.5rem;
-  padding: 0;
   color: var(--grayLight);
   user-select: none;
   z-index: 4;
@@ -29,23 +30,22 @@
   height: 100%;
   background-color: none;
   list-style: none;
-  gap: 5rem;
+  gap: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding: 0;
 }
 
 .category-videos-list > *:first-child {
-  margin-left: 2rem;
+  border-left: 2vw solid transparent;
 }
-
 .category-videos-list > *:last-child {
-  border-right: 5rem solid transparent;
+  border-right: 2vw solid transparent;
 }
 
 @media (max-width: 720px) {
   .video-category-section {
-    height: calc(3.2rem + 1.2 * 20vh);
-    width: 100%;
+    height: calc(3.2rem + 1.2 * 240px);
     padding-right: 0;
     padding-left: 0;
   }

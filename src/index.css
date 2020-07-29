@@ -58,5 +58,10 @@ a {
 }
 
 .no-opacity {
+  display: hidden;
   opacity: 0;
+}
+
+.section-margin-top {
+  margin-top: 4rem;
 }

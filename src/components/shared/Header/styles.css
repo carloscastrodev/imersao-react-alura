@@ -7,7 +7,7 @@
   height: var(--headerHeight);
   transition: border 0.4s ease-out, background-color 0.4s ease-out;
   border-bottom: 2px transparent solid;
-  padding: 5px;
+  padding: 5px var(--totalSidePadding) 5px var(--totalSidePadding);
 }
 
 .header-hidden {
@@ -20,7 +20,11 @@
 }
 
 .no-header-background {
-  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.9),
+    rgba(20, 20, 20, 0)
+  );
   background-repeat: no-repeat;
 }
 
@@ -30,8 +34,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .nav-logo-link {
@@ -67,7 +71,8 @@
   opacity: 0.8;
 }
 
-.up-arrow, .down-arrow {
+.up-arrow,
+.down-arrow {
   transition: transform 0.1s ease-in;
 }
 

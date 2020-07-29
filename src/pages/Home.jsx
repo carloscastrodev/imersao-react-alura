@@ -68,7 +68,7 @@ const Home = () => {
           />
         )) || <Shell bg={'black'} />}
       </StyledSection>
-      <StyledSection>
+      <StyledSection className="section-margin-top">
         {videosByCategoryList.map(({ category, videos }) => (
           <VideoCategoryDisplay
             key={category}

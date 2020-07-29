@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const StyledLink = styled(Link)`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +16,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
+  border: 2px var(--grayLight) solid;
   transition: all 0.4s ease-out;
   font-weight: 700;
   &:hover {
