@@ -48,20 +48,24 @@ a {
 }
 
 .column-flex {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .center {
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .no-opacity {
-  display: hidden;
-  opacity: 0;
+  display: hidden !important;
+  opacity: 0 !important;
 }
 
 .section-margin-top {
-  margin-top: 4rem;
+  margin-top: 4rem !important;
+}
+
+.section-header-padding {
+  padding-top: var(--headerHeight) !important;
 }

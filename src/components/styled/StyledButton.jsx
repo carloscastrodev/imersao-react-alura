@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-const StyledLink = styled(Link)`
+const StyledButton = styled.button`
   position: relative;
   display: flex;
   align-items: center;
@@ -21,10 +20,11 @@ const StyledLink = styled(Link)`
   font-weight: 700;
   &:hover {
     letter-spacing: 2px;
+    cursor: pointer;
   }
   span {
     display: flex;
   }
 `;
 
-export default StyledLink;
+export default StyledButton;

@@ -54,13 +54,13 @@ const Home = () => {
     if (currentHighlightedVideo.videoId !== videoInfo.videoId) {
       setHighlightToLocalStorage(videoInfo);
       setCurrentHighlightedVideo(videoInfo);
-      window.scrollTo(0, 0);
     }
+    window.scrollTo(0, 0);
   };
 
   return (
     <>
-      <StyledSection firstSection={true}>
+      <StyledSection>
         {(currentHighlightedVideo && (
           <HighlightVideoPlayer
             videoInfo={currentHighlightedVideo}

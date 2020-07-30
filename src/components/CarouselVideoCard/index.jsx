@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import YTApiMessages from '../../services/YTApiMessages';
 import './styles.css';
+import useWindowDimensions from '../hooks/windowDimensions';
 
 const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
   const { videoId, title } = videoInfo;
@@ -9,6 +10,8 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
   let timeoutId = null;
   const previewRef = React.createRef();
   const cardRef = React.createRef();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 1024;
 
   useEffect(() => {
     cardRef.current.addEventListener('mouseenter', setFocus, false);
@@ -51,13 +54,16 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
     <div
       ref={cardRef}
       className="card-wrapper"
-      onClick={() => onCardClick(videoInfo)}
+      onClick={() => {
+        onCardClick(videoInfo);
+      }}
+      onMouseDown={e => e.preventDefault()}
     >
       <img
         alt="video thumbnail"
         src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         className={`video-card-image ${
-          (shouldPlayVideo && 'no-opacity') || ''
+          (!isMobile && shouldPlayVideo && 'no-opacity') || ''
         }`}
       />
       <div className="hide-overflow">
@@ -65,12 +71,12 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
           className={`video-title-wrapper ${
             (isFocused && 'show-card-title') || 'hide-card-title'
           }
-            ${(shouldPlayVideo && 'no-opacity') || ''}`}
+            ${(!isMobile && shouldPlayVideo && 'no-opacity') || ''}`}
         >
           <h2 className="card-title">{title}</h2>
         </div>
       </div>
-      {isFocused && (
+      {!isMobile && isFocused && (
         <div className="preview-wrapper">
           <iframe
             ref={previewRef}

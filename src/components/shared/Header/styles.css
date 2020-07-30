@@ -84,7 +84,7 @@
   transform: translateY(3px);
 }
 
-@media (max-width: 756px) {
+@media (max-width: 1024px) {
   .hide-header-button {
     display: none;
     transform: translateX(100%);

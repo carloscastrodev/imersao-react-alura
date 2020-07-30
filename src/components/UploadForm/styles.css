@@ -1,0 +1,11 @@
+.default-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-button {
+  margin-left: auto;
+}
