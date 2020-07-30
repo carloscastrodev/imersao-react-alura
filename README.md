@@ -1,18 +1,19 @@
 # 📼 Chopperflix
 
 > Um hub para AMV's legais 😎
+
 <p align="center">
   <img align="center" src="https://img.shields.io/badge/License-MIT-f282ad" />
   <img align="center" src="https://img.shields.io/badge/Alura-On-%232a7ae4" />
   <img align="center" src="https://img.shields.io/badge/Made%20With-React-61dbfb" />
 </p>
 
-
 Um clone da Netflix utilizando algumas cores da paleta do personagem Tony Tony Chopper do One Piece, baseando-se nas video aulas da
 Imersão React da [Alura](https://www.alura.com.br/)
 
 ![Front-Page da aplicação](./.gitassets/readme-header.png)
 ![Front-Page da aplicação](./.gitassets/readme-header2.png)
+![Página de Upload da aplicação](./.gitassets/upload-ss.png)
 
 ## Instalação
 
@@ -36,11 +37,7 @@ Esse projeto está sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## ToDo
 
-- Dormir;
-
-- Substituir o carrossel por um mais bacana (tentar escrever o código eu mesmo);
-
-- Criar a página de Upload da aplicação;
+- Backend;
 
 ## Contribuindo
 
