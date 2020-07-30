@@ -9,21 +9,20 @@ const FieldFormInput = ({
   required = false,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+  const selfRef = React.createRef();
 
   const setFocus = () => {
     setIsFocused(true);
   };
 
   const setUnfocus = () => {
-    if (inputValue === '') {
+    if (selfRef.current.value === '') {
       setIsFocused(false);
     }
   };
 
   const handleChangeInputValue = e => {
     const { value } = e.target;
-    setInputValue(value);
 
     if (value !== '') {
       setFieldsValues(
@@ -42,6 +41,7 @@ const FieldFormInput = ({
         {placeholder}
       </span>
       <input
+        ref={selfRef}
         onChange={handleChangeInputValue}
         onFocus={setFocus}
         onBlur={setUnfocus}

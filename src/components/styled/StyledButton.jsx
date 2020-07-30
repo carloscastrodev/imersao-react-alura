@@ -5,6 +5,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
   gap: 5px;
   width: fit-content;
   height: 32px;
