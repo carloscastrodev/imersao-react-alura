@@ -5,6 +5,7 @@ import useWindowDimensions from '../components/hooks/windowDimensions';
 import GetVideosService from '../services/GetVideosService';
 import VideoCategoryDisplay from '../components/VideoCategoryDisplay';
 import Shell from '../components/Shell';
+import Loading from '../components/Loading';
 
 const Home = () => {
   const getHighlightFromLocalStorage = () => {
@@ -31,8 +32,9 @@ const Home = () => {
   const { height } = useWindowDimensions();
 
   useEffect(() => {
-    const videosByCategory = GetVideosService.execute();
-    setVideosByCategoryList(videosByCategory);
+    GetVideosService.execute().then(response =>
+      setVideosByCategoryList(response.data),
+    );
     setCurrentHighlightedVideo(getHighlightFromLocalStorage());
   }, []);
 
@@ -69,14 +71,15 @@ const Home = () => {
         )) || <Shell bg={'black'} />}
       </StyledSection>
       <StyledSection className="section-margin-top">
-        {videosByCategoryList.map(({ category, videos }) => (
-          <VideoCategoryDisplay
-            key={category}
-            category={category}
-            videoList={videos}
-            handleChangeHighlightedVideo={handleChangeHighlightedVideo}
-          />
-        ))}
+        {(videosByCategoryList.length > 0 &&
+          videosByCategoryList.map(({ category, videos }) => (
+            <VideoCategoryDisplay
+              key={category}
+              category={category}
+              videoList={videos}
+              handleChangeHighlightedVideo={handleChangeHighlightedVideo}
+            />
+          ))) || <Loading />}
       </StyledSection>
     </>
   );

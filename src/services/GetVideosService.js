@@ -1,7 +1,7 @@
-import mockApi from '../mockApi/videosAPI';
+import api from '../mockApi/api';
 
-const execute = () => {
-  const { videosByCategory } = mockApi;
+const execute = async () => {
+  const videosByCategory = await api.get('/videosbycategory');
   return videosByCategory;
 };
 

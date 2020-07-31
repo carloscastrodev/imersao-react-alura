@@ -23,12 +23,28 @@ const VideoCategoryDisplay = ({
     sliderRef.current.slickPrev();
   };
 
+  const getSlidesToShow = () => {
+    if (width > 1366) {
+      return 4;
+    } else if (width > 1024) {
+      return 3;
+    } else if (width > 600) {
+      return 2;
+    } else {
+      return 1;
+    }
+  };
+
+  const isSlideInfinite = getSlidesToShow() < videoList.length;
+
   return (
     <section className="video-category-section">
       <h2 className="category-title">{category}</h2>
       <Slider
         ref={sliderRef}
         {...carouselSettings}
+        slidesToShow={getSlidesToShow()}
+        infinite={isSlideInfinite}
         className="category-videos-list"
       >
         {videoList.map(video => (
@@ -40,7 +56,9 @@ const VideoCategoryDisplay = ({
           </li>
         ))}
       </Slider>
-      <CustomSliderControls next={handleNext} previous={handlePrevious} />
+      {isSlideInfinite && (
+        <CustomSliderControls next={handleNext} previous={handlePrevious} />
+      )}
     </section>
   );
 };

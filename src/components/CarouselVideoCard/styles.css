@@ -52,7 +52,7 @@
   font-size: 1.1rem;
   color: var(--primary);
   margin: 0;
-  display: flex;
+  display: block;
   align-items: center;
   width: 100%;
   text-align: end;
@@ -97,6 +97,7 @@
 @media (max-width: 1024px) {
   .video-title-wrapper {
     height: auto;
+    min-height: 4rem;
   }
 
   .card-title {

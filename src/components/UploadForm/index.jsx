@@ -10,7 +10,7 @@ const UploadForm = ({ fields, submitCallback }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (submitCallback) {
-      submitCallback({ data: fieldsValues });
+      submitCallback({ videoData: fieldsValues });
     }
     setFieldsValues({});
   };

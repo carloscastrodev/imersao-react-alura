@@ -28,10 +28,14 @@
   justify-content: center;
 }
 
+.slick-list {
+  padding: 0 50px;
+}
+
 .slick-slide {
   outline: none;
   height: fit-content;
-  margin: 0px 18px;
+  margin: 0px 12px;
 }
 
 .slick-slide * {

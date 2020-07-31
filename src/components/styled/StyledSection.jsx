@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
+  position: relative;
   min-height: calc(100vh - var(--footerHeight));
   height: auto;
   padding: 0;
@@ -10,7 +11,6 @@ const StyledSection = styled.section`
   background-size: min(40vw, 500px);
   background-position-y: 100%;
   background-position-x: 5vw;
-
   @media (max-width: 756px) {
     background-size: 40vh;
   }
