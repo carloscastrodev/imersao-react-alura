@@ -4,7 +4,7 @@ import HighlightVideoPlayer from '../components/HighlightVideoPlayer';
 import useWindowDimensions from '../components/hooks/windowDimensions';
 import GetVideosService from '../services/GetVideosService';
 import VideoCategoryDisplay from '../components/VideoCategoryDisplay';
-import Shell from '../components/shared/Shell';
+import Shell from '../components/Shell';
 
 const Home = () => {
   const getHighlightFromLocalStorage = () => {

@@ -2,6 +2,8 @@
   position: relative;
   height: 4rem;
   width: 100%;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .form-input {
@@ -22,6 +24,13 @@
 
 .form-input:focus {
   border: 2px var(--secondary) solid;
+}
+
+.form-input-invalid {
+  font-weight: bold;
+  color: rgb(220, 20, 20);
+  border: 3px rgb(220, 20, 20) solid;
+  animation: invalid-input-animation 2s ease-out;
 }
 
 .fake-placeholder {
@@ -45,4 +54,34 @@
   color: var(--contrastLight);
   height: 100%;
   padding-top: 8px;
+}
+
+@keyframes invalid-input-animation {
+  0% {
+    background-color: white;
+  }
+
+  15% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+
+  30% {
+    background-color: white;
+  }
+
+  45% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+
+  60% {
+    background-color: white;
+  }
+
+  75% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+
+  90% {
+    background-color: white;
+  }
 }

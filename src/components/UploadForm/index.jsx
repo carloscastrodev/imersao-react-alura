@@ -25,6 +25,8 @@ const UploadForm = ({ fields, submitCallback }) => {
             placeholder={field.placeholder}
             fieldsValues={fieldsValues}
             setFieldsValues={setFieldsValues}
+            pattern={field.pattern || null}
+            warningText={field.warningText || null}
             required={field.required}
           />
         ))}
