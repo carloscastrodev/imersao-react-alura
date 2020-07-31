@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import WarningToast from '../WarningToast';
+import Toast from '../Toast';
 
 const FieldFormInput = ({
   placeholder,
@@ -17,8 +17,13 @@ const FieldFormInput = ({
   const selfRef = React.createRef();
 
   useEffect(() => {
-    if (Object.keys(fieldsValues).length === 0) {
+    const isFocused = document.activeElement === selfRef.current;
+    if (Object.keys(fieldsValues).length === 0 && !isFocused) {
       setHasText(false);
+    } else {
+      if (fieldsValues[dbKey]) {
+        setHasText(true);
+      }
     }
   }, [fieldsValues]);
 
@@ -76,10 +81,11 @@ const FieldFormInput = ({
         />
       </div>
       {warningText && (
-        <WarningToast
-          warning={warningText}
+        <Toast
+          text={warningText}
           show={showWarningToast}
           setShow={setShowWarningToast}
+          warning={true}
         />
       )}
     </>

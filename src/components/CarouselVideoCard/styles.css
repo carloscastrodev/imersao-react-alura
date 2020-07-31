@@ -26,7 +26,8 @@
   padding: 8px 10px;
   background-color: var(--secondary);
   text-align: right;
-  clip-path: polygon(2% 0%, 100% 0%, 100% 100%, 2% 100%, 0% 50%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   transition: transform 0.4s ease-out;
 }
 

@@ -17,17 +17,17 @@
   --footerHeight: 96px;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 11px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--light);
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--secondary);
-  border: none;
+  border: 1px var(--grayLight) solid;
 }
 
 html,

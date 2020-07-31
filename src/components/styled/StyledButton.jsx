@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   outline: none;
   gap: 5px;
   width: fit-content;
+  min-width: 80px;
   height: 32px;
   padding: 8px;
   color: ${({ color }) => color || 'var(--secondary)'};
@@ -25,6 +26,9 @@ const StyledButton = styled.button`
   }
   span {
     display: flex;
+  }
+  @media (max-width: 450px) {
+    font-size: 1rem;
   }
 `;
 

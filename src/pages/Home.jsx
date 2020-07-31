@@ -62,25 +62,28 @@ const Home = () => {
 
   return (
     <>
-      <StyledSection>
-        {(currentHighlightedVideo && (
-          <HighlightVideoPlayer
-            videoInfo={currentHighlightedVideo}
-            shouldVideoPlay={shouldVideoPlay}
-          />
-        )) || <Shell bg={'black'} />}
-      </StyledSection>
-      <StyledSection className="section-margin-top">
-        {(videosByCategoryList.length > 0 &&
-          videosByCategoryList.map(({ category, videos }) => (
-            <VideoCategoryDisplay
-              key={category}
-              category={category}
-              videoList={videos}
-              handleChangeHighlightedVideo={handleChangeHighlightedVideo}
-            />
-          ))) || <Loading />}
-      </StyledSection>
+      {(videosByCategoryList.length > 0 && (
+        <>
+          <StyledSection>
+            {(currentHighlightedVideo && (
+              <HighlightVideoPlayer
+                videoInfo={currentHighlightedVideo}
+                shouldVideoPlay={shouldVideoPlay}
+              />
+            )) || <Shell bg={'black'} />}
+          </StyledSection>
+          <StyledSection className="section-margin-top">
+            {videosByCategoryList.map(({ category, videos }) => (
+              <VideoCategoryDisplay
+                key={category}
+                category={category}
+                videoList={videos}
+                handleChangeHighlightedVideo={handleChangeHighlightedVideo}
+              />
+            ))}
+          </StyledSection>
+        </>
+      )) || <Loading />}
     </>
   );
 };

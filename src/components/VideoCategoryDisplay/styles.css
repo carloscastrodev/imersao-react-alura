@@ -8,7 +8,7 @@
   margin-right: 5vw;
 }
 
-.category-title {
+.category-section-title {
   font-size: 2.2rem;
   margin-top: 0;
   margin-bottom: -2.5rem;
@@ -56,7 +56,7 @@
     margin-top: 5rem;
   }
 
-  .category-title {
+  .category-section-title {
     text-align: center;
     width: fit-content;
     position: absolute;

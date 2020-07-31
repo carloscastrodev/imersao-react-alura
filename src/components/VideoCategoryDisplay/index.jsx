@@ -12,7 +12,6 @@ const VideoCategoryDisplay = ({
   handleChangeHighlightedVideo,
 }) => {
   const { width } = useWindowDimensions();
-  const isMobile = width < 1024;
   const sliderRef = React.createRef();
 
   const handleNext = () => {
@@ -39,7 +38,7 @@ const VideoCategoryDisplay = ({
 
   return (
     <section className="video-category-section">
-      <h2 className="category-title">{category}</h2>
+      <h2 className="category-section-title">{category}</h2>
       <Slider
         ref={sliderRef}
         {...carouselSettings}

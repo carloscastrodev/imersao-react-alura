@@ -6,6 +6,15 @@
   gap: 10px;
 }
 
+.controls-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.categories-button {
+  margin-right: auto;
+}
+
 .submit-button {
   margin-left: auto;
 }

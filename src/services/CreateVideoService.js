@@ -13,6 +13,25 @@ const execute = async ({ videoData }) => {
   if (categoryExists) {
     const categoryEntry = data[0];
     const { videos } = categoryEntry;
+    const videosTitles = videos.map(video => video.title);
+    const videosIds = videos.map(video => video.videoId);
+    console.log('titles', videosTitles);
+    console.log('ids', videosIds);
+    console.log('includes', videosTitles.includes(videoData.title));
+
+    if (
+      videosTitles.includes(videoData.title) ||
+      videosIds.includes(videoData.videoId)
+    ) {
+      console.log('got into if');
+      return {
+        isNewCategory: false,
+        responseInfo: {
+          status: 409,
+        },
+      };
+    }
+
     const newVideoId = videos.length + 1;
     const newVideoData = {
       id: newVideoId,
@@ -30,7 +49,7 @@ const execute = async ({ videoData }) => {
       requestConfig,
     );
     console.log(videoInserted);
-    return videoInserted;
+    return { isNewCategory: false, responseInfo: videoInserted };
   } else {
     const categoryToCreate = {
       category: videoData.category,
@@ -42,7 +61,7 @@ const execute = async ({ videoData }) => {
       requestConfig,
     );
     console.log(createdCategory);
-    return createdCategory;
+    return { isNewCategory: true, responseInfo: createdCategory };
   }
 };
 

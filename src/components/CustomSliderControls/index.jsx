@@ -6,10 +6,10 @@ const CustomSliderControls = ({ next, previous }) => {
   return (
     <div className="custom-slider-controls">
       <button className="slider-control previous-button" onClick={previous}>
-        <IoIosArrowBack size={32} />
+        <IoIosArrowBack size={34} />
       </button>
       <button className="slider-control next-button" onClick={next}>
-        <IoIosArrowForward size={32} />
+        <IoIosArrowForward size={34} />
       </button>
     </div>
   );

@@ -4,7 +4,7 @@
   height: calc(100% + 4rem);
   width: 5%;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .loading-slider-left {
@@ -20,33 +20,23 @@
 @keyframes animate-loading-left {
   0% {
     transform: translateX(0);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
-  50% {
+  60% {
     transform: translateX(1000%);
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  100% {
-    transform: translateX(0);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
   }
 }
 
 @keyframes animate-loading-right {
   0% {
     transform: translateX(0);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
-  50% {
+  60% {
     transform: translateX(-1000%);
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  100% {
-    transform: translateX(0);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
   }
 }
