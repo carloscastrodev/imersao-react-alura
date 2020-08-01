@@ -69,3 +69,14 @@ a {
 .section-header-padding {
   padding-top: var(--headerHeight) !important;
 }
+
+.category-section-container {
+  margin: 10px 5vw 5rem 5vw;
+  position: relative;
+}
+
+.manage-page-container {
+  margin: 0 5vw 0 5vw;
+  position: relative;
+  height: 100%;
+}
