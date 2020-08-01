@@ -62,7 +62,7 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
     >
       <img
         alt="video thumbnail"
-        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         className={`video-card-image ${
           (!isMobile && shouldPlayVideo && 'no-opacity') || ''
         }`}
