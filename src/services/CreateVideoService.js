@@ -1,4 +1,4 @@
-import api from '../mockApi/api';
+import api from '../api/api';
 
 const requestConfig = {
   headers: { 'Content-Type': 'application/json' },
@@ -15,15 +15,11 @@ const execute = async ({ videoData }) => {
     const { videos } = categoryEntry;
     const videosTitles = videos.map(video => video.title);
     const videosIds = videos.map(video => video.videoId);
-    console.log('titles', videosTitles);
-    console.log('ids', videosIds);
-    console.log('includes', videosTitles.includes(videoData.title));
 
     if (
       videosTitles.includes(videoData.title) ||
       videosIds.includes(videoData.videoId)
     ) {
-      console.log('got into if');
       return {
         isNewCategory: false,
         responseInfo: {
@@ -48,7 +44,6 @@ const execute = async ({ videoData }) => {
       updatedCategory,
       requestConfig,
     );
-    console.log(videoInserted);
     return { isNewCategory: false, responseInfo: videoInserted };
   } else {
     const categoryToCreate = {
@@ -60,7 +55,6 @@ const execute = async ({ videoData }) => {
       categoryToCreate,
       requestConfig,
     );
-    console.log(createdCategory);
     return { isNewCategory: true, responseInfo: createdCategory };
   }
 };
