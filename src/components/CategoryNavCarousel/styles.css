@@ -1,0 +1,24 @@
+.categories-nav {
+  height: 120px;
+  position: absolute;
+  bottom: 20px;
+  background: var(--contrast);
+  width: 100%;
+}
+
+.categories-nav-list {
+  height: 120px;
+}
+
+.categories-nav-list * {
+  height: 120px;
+}
+
+.categories-nav > .custom-slider-controls {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+
+.categories-nav:hover > .custom-slider-controls {
+  opacity: 1;
+}
