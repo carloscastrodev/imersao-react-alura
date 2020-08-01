@@ -8,8 +8,7 @@
 }
 
 .category-list {
-  max-height: 60vh;
-  min-height: fit-content;
+  height: 60vh;
   width: 100%;
   list-style: none;
   padding: 20px;
