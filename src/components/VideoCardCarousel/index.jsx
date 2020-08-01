@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.css';
-import CarouselVideoCard from '../CarouselVideoCard';
+import VideoCard from './VideoCard';
 import Slider from 'react-slick';
 import carouselSettings from './carouselConfig';
 import CustomSliderControls from '../CustomSliderControls';
 import useWindowDimensions from '../hooks/windowDimensions';
 
-const VideoCategoryDisplay = ({
+const VideoCardCarousel = ({
   category,
   videoList,
   handleChangeHighlightedVideo,
@@ -48,7 +48,7 @@ const VideoCategoryDisplay = ({
       >
         {videoList.map(video => (
           <li key={video.videoId}>
-            <CarouselVideoCard
+            <VideoCard
               handleChangeHighlightedVideo={handleChangeHighlightedVideo}
               videoInfo={video}
             />
@@ -62,4 +62,4 @@ const VideoCategoryDisplay = ({
   );
 };
 
-export default VideoCategoryDisplay;
+export default VideoCardCarousel;

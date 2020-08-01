@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import YTApiMessages from '../../services/YTApiMessages';
+import YTApiMessages from '../../../services/YTApiMessages';
 import './styles.css';
-import useWindowDimensions from '../hooks/windowDimensions';
+import useWindowDimensions from '../../hooks/windowDimensions';
+import useOnMount from '../../hooks/onMount';
 
 const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
   const { videoId, title } = videoInfo;
@@ -13,10 +14,10 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
   const { width } = useWindowDimensions();
   const isMobile = width < 1024;
 
-  useEffect(() => {
+  useOnMount(() => {
     cardRef.current.addEventListener('mouseenter', setFocus, false);
     cardRef.current.addEventListener('mouseleave', setUnfocus, false);
-  }, []);
+  });
 
   useEffect(() => {
     if (previewRef.current) {
@@ -61,7 +62,7 @@ const CarouselVideoCard = ({ videoInfo, handleChangeHighlightedVideo }) => {
     >
       <img
         alt="video thumbnail"
-        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
         className={`video-card-image ${
           (!isMobile && shouldPlayVideo && 'no-opacity') || ''
         }`}

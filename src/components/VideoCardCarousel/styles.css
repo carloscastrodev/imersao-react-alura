@@ -21,15 +21,16 @@
   margin-top: 3rem;
 }
 
+.video-category-section .slider-control {
+  height: 250px;
+  top: calc(3rem + 25px);
+}
+
 .slick-track {
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.slick-list {
-  padding: 0 50px;
 }
 
 .slick-slide {
@@ -40,11 +41,6 @@
 
 .slick-slide * {
   outline: none;
-}
-
-.custom-slider-controls {
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
 }
 
 .video-category-section:hover > .custom-slider-controls {
