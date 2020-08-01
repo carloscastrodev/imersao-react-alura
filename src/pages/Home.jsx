@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import StyledSection from '../components/styled/StyledSection';
 import HighlightVideoPlayer from '../components/HighlightVideoPlayer';
 import useWindowDimensions from '../components/hooks/windowDimensions';
 import GetVideosService from '../services/GetVideosService';
-import VideoCategoryDisplay from '../components/VideoCategoryDisplay';
+import VideoCardCarousel from '../components/VideoCardCarousel';
 import Shell from '../components/Shell';
 import Loading from '../components/Loading';
+import SearchBar from '../components/SearchBar';
+import useOnMount from '../components/hooks/onMount';
+import NoItemsFilter from '../components/NoItemsFilter';
 
 const Home = () => {
   const getHighlightFromLocalStorage = () => {
@@ -28,21 +31,23 @@ const Home = () => {
 
   const [shouldVideoPlay, setShouldVideoPlay] = useState(true);
   const [videosByCategoryList, setVideosByCategoryList] = useState([]);
-  const [currentHighlightedVideo, setCurrentHighlightedVideo] = useState(null);
+  const [filteredList, setFilteredList] = useState([]);
+  const [highlightedVideo, setHighlightedVideo] = useState(null);
   const { height } = useWindowDimensions();
 
-  useEffect(() => {
-    GetVideosService.execute().then(response =>
-      setVideosByCategoryList(response.data),
-    );
-    setCurrentHighlightedVideo(getHighlightFromLocalStorage());
-  }, []);
+  useOnMount(() => {
+    GetVideosService.execute().then(response => {
+      setVideosByCategoryList(response.data);
+      setFilteredList(response.data);
+    });
+    setHighlightedVideo(getHighlightFromLocalStorage());
+  });
 
   useEffect(() => {
     window.addEventListener('scroll', scrollPastHighlight, false);
   }, [shouldVideoPlay]);
 
-  const scrollPastHighlight = () => {
+  const scrollPastHighlight = useCallback(() => {
     if (window.scrollY > 0.4 * height && shouldVideoPlay === true) {
       window.removeEventListener('scroll', scrollPastHighlight);
       setShouldVideoPlay(false);
@@ -50,12 +55,12 @@ const Home = () => {
       window.removeEventListener('scroll', scrollPastHighlight);
       setShouldVideoPlay(true);
     }
-  };
+  }, [shouldVideoPlay, height]);
 
   const handleChangeHighlightedVideo = videoInfo => {
-    if (currentHighlightedVideo.videoId !== videoInfo.videoId) {
+    if (highlightedVideo.videoId !== videoInfo.videoId) {
       setHighlightToLocalStorage(videoInfo);
-      setCurrentHighlightedVideo(videoInfo);
+      setHighlightedVideo(videoInfo);
     }
     window.scrollTo(0, 0);
   };
@@ -65,22 +70,37 @@ const Home = () => {
       {(videosByCategoryList.length > 0 && (
         <>
           <StyledSection>
-            {(currentHighlightedVideo && (
+            {(highlightedVideo && (
               <HighlightVideoPlayer
-                videoInfo={currentHighlightedVideo}
+                videoInfo={highlightedVideo}
                 shouldVideoPlay={shouldVideoPlay}
               />
             )) || <Shell bg={'black'} />}
           </StyledSection>
           <StyledSection className="section-margin-top">
-            {videosByCategoryList.map(({ category, videos }) => (
-              <VideoCategoryDisplay
-                key={category}
-                category={category}
-                videoList={videos}
-                handleChangeHighlightedVideo={handleChangeHighlightedVideo}
+            <div className="category-section-container">
+              <SearchBar
+                scrollTo={true}
+                header="Pesquisar por nome"
+                placeholder="Naruto, Bleach, Shingeki no Kyojin..."
+                all={videosByCategoryList}
+                setFiltered={setFilteredList}
+                propName={'category'}
               />
-            ))}
+            </div>
+            {(filteredList.length > 0 &&
+              filteredList.map(({ category, videos }) => (
+                <VideoCardCarousel
+                  key={category}
+                  category={category}
+                  videoList={videos}
+                  handleChangeHighlightedVideo={handleChangeHighlightedVideo}
+                />
+              ))) || (
+              <div className="category-section-container">
+                <NoItemsFilter />
+              </div>
+            )}
           </StyledSection>
         </>
       )) || <Loading />}
