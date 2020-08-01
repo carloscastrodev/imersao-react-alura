@@ -41,6 +41,9 @@ const FieldFormInput = ({
         if (!fieldsValues[dbKey].match(pattern)) {
           setInvalid(true);
           setShowWarningToast(true);
+        } else if (fieldsValues[dbKey].match(pattern)) {
+          setInvalid(false);
+          setShowWarningToast(false);
         }
       }
     }
@@ -64,7 +67,9 @@ const FieldFormInput = ({
     <>
       <div className="input-wrapper">
         <span
-          className={`fake-placeholder  ${hasText && 'small-placeholder'} `}
+          className={`fake-placeholder  ${
+            (hasText && 'small-placeholder') || ''
+          } `}
         >
           {placeholder}
         </span>
@@ -74,7 +79,8 @@ const FieldFormInput = ({
           onChange={handleChangeInputValue}
           onFocus={setFocus}
           onBlur={setUnfocus}
-          className={`form-input ${invalid && 'form-input-invalid'}`}
+          className={`form-input ${(invalid && 'form-input-invalid') || ''}`}
+          name={dbKey}
           value={fieldsValues[dbKey] || ''}
           onInvalid={e => e.preventDefault()}
           required={required}
