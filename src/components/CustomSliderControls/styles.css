@@ -1,10 +1,12 @@
+.custom-slider-controls {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+
 .slider-control {
   position: absolute;
-  top: 3rem;
-  bottom: 0;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: 252px;
+  top: 0;
+  height: 100%;
   background-color: rgba(20, 20, 20, 0.6);
   color: rgba(255, 255, 255, 0.5);
   outline: none;
@@ -49,10 +51,4 @@
 
 .next-button:hover * {
   transform: translateX(5%);
-}
-
-@media (max-width: 720px) {
-  .slider-control {
-    top: 7rem;
-  }
 }
