@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import StyledSection from '../styled/StyledSection';
 import ButtonLink from '../ButtonLink';
 import { FaArrowLeft } from 'react-icons/fa';
+import useOnMount from '../hooks/onMount';
 
 const UnderConstruction = () => {
   const [imageToRender, setImageToRender] = useState('');
 
-  useEffect(() => {
+  useOnMount(() => {
     const imgNumber = Math.round(3 * Math.random());
     switch (imgNumber) {
       case 0:
@@ -31,7 +32,7 @@ const UnderConstruction = () => {
         );
         break;
     }
-  }, []);
+  });
 
   return (
     <StyledSection firstSection={true} className="column-flex center">

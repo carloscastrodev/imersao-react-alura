@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import YTApiMessages from '../../services/YTApiMessages';
 import useWindowDimensions from '../hooks/windowDimensions';
+import useOnMount from '../hooks/onMount';
 
 const HighlightVideoPlayer = ({ videoInfo, shouldVideoPlay }) => {
   const videoId = videoInfo.videoId;
   const [contentWindow, setContentWindow] = useState(null);
   const { width } = useWindowDimensions();
 
-  useEffect(() => {
+  useOnMount(() => {
     const player = document.getElementById('highlight-player');
     setContentWindow(player.contentWindow);
-  }, []);
+  });
 
   useEffect(() => {
     if (contentWindow) {
