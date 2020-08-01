@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import UploadForm from '../components/UploadForm';
 import StyledSection from '../components/styled/StyledSection';
 import bgchopper from '../assets/upload-chopper.png';
@@ -9,15 +9,20 @@ import Loading from '../components/Loading';
 import Toast from '../components/Toast';
 
 const uploadFields = [
-  { placeholder: 'Nome do Anime', required: true, dbKey: 'category' },
   {
-    placeholder: 'ID do Vídeo',
+    placeholder: 'Nome do Anime*',
+    required: true,
+    dbKey: 'category',
+    primary: true,
+  },
+  {
+    placeholder: 'ID do Vídeo*',
     required: true,
     dbKey: 'videoId',
     pattern: '^[a-zA-Z0-9_-]{11}$',
     warningText: 'Esse não parece ser um ID de vídeo válido 🤔',
   },
-  { placeholder: 'Título do Vídeo', required: true, dbKey: 'title' },
+  { placeholder: 'Título do Vídeo*', required: true, dbKey: 'title' },
 ];
 
 const NewVideo = () => {
@@ -26,16 +31,16 @@ const NewVideo = () => {
   const [showErrorToast, setShowErrorToast] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  let timeoutId;
+  let timeoutId = useRef();
 
   useEffect(() => {
     if (errorMessage !== '') {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-        timeoutId = null;
+      if (timeoutId.current) {
+        clearTimeout(timeoutId.current);
+        timeoutId.current = null;
       }
       setShowErrorToast(true);
-      timeoutId = setTimeout(() => {
+      timeoutId.current = setTimeout(() => {
         setErrorMessage('');
         setShowErrorToast(false);
       }, 4000);
@@ -45,11 +50,11 @@ const NewVideo = () => {
   useEffect(() => {
     if (successMessage !== '') {
       if (timeoutId) {
-        clearTimeout(timeoutId);
-        timeoutId = null;
+        clearTimeout(timeoutId.current);
+        timeoutId.current = null;
       }
       setShowSuccessToast(true);
-      timeoutId = setTimeout(() => {
+      timeoutId.current = setTimeout(() => {
         setSuccessMessage('');
         setShowSuccessToast(false);
       }, 4000);
@@ -72,17 +77,15 @@ const NewVideo = () => {
     });
     const responseStatus = responseInfo.status;
 
-    if (responseStatus < 200 || responseStatus > 300) {
+    if (responseStatus < 200 || responseStatus >= 300) {
       const failure = false;
-      console.log(responseStatus);
       if (responseStatus === 409) {
-        console.log('Hello');
         setErrorMessage('Vídeo já cadastrado.');
       } else {
         setErrorMessage('Não foi possível cadastrar o vídeo.');
       }
       return failure;
-    } else if (responseStatus > 200 && responseStatus < 300) {
+    } else if (responseStatus >= 200 && responseStatus < 300) {
       const success = true;
       setSuccessMessage('Vídeo cadastrado com sucesso');
       if (isNewCategory) {
