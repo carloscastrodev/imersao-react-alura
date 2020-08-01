@@ -84,6 +84,12 @@
   transform: translateY(3px);
 }
 
+.nav-buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+}
+
 @media (max-width: 1024px) {
   .hide-header-button {
     display: none;

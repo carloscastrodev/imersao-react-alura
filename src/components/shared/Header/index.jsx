@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import logo from '../../../assets/logo.png';
 import './styles.css';
@@ -37,12 +38,20 @@ const Header = () => {
           <Link className="nav-logo-link" to="/">
             <img alt="chopperflix logo" className="nav-logo" src={logo} />
           </Link>
-          <ButtonLink to="/newvideo">
-            <span role="img" aria-label="Sinal de mais">
-              <FaPlus size={'1.2rem'} />
-            </span>
-            <p>UPLOAD</p>
-          </ButtonLink>
+          <div className="nav-buttons-wrapper">
+            <ButtonLink to="/manage">
+              <span role="img" aria-label="Sinal de edição">
+                <FiEdit size={'1.2rem'} />
+              </span>
+              <p>MANAGE</p>
+            </ButtonLink>
+            <ButtonLink to="/newvideo">
+              <span role="img" aria-label="Sinal de mais">
+                <FaPlus size={'1.2rem'} />
+              </span>
+              <p>UPLOAD</p>
+            </ButtonLink>
+          </div>
         </nav>
       </header>
       <button onClick={handleHideHeader} className="hide-header-button">
