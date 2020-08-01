@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FieldFormInput from '../FieldFormInput';
 import StyledButton from '../styled/StyledButton';
 import './styles.css';
-import { FaPlus, FaClosedCaptioning } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Modal from '../Modal';
 import CategoryList from '../CategoryList';
@@ -16,10 +16,14 @@ const UploadForm = ({ fields, submitCallback, categoriesTitles }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (submitCallback) {
-      const submitSuccess = submitCallback({ videoData: fieldsValues });
-      if (submitSuccess === true) {
-        setFieldsValues({});
-      }
+      submitCallback({ videoData: fieldsValues }).then(response => {
+        if (response === true) {
+          const primaryField = fields.find(field => field.primary);
+          const { dbKey } = primaryField;
+          setFieldsValues({ [dbKey]: fieldsValues[dbKey] });
+          return { submit: true };
+        }
+      });
     }
   };
 
@@ -40,7 +44,11 @@ const UploadForm = ({ fields, submitCallback, categoriesTitles }) => {
 
   return (
     <>
-      <form className="default-form" onSubmit={handleSubmit}>
+      <form
+        className="default-form"
+        onSubmit={handleSubmit}
+        name="create-video-form"
+      >
         {fields.map(field => (
           <FieldFormInput
             key={field.dbKey}
@@ -62,7 +70,7 @@ const UploadForm = ({ fields, submitCallback, categoriesTitles }) => {
             <span role="img" aria-label="Sinal de mais">
               <GiHamburgerMenu size={'1.2rem'} />
             </span>
-            {width > 375 && <p>CATEGORIAS CADASTRADAS</p>}
+            {width > 375 && <p>ANIMES CADASTRADOS</p>}
           </StyledButton>
           <StyledButton type="submit" className="submit-button">
             <span role="img" aria-label="Sinal de mais">
