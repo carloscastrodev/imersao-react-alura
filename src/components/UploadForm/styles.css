@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+
+.default-form > .input-wrapper {
+  margin-bottom: 10px;
 }
 
 .controls-wrapper {
