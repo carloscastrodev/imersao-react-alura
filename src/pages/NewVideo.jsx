@@ -113,21 +113,21 @@ const NewVideo = () => {
               categoriesTitles={allCategories}
             />
           </StyledFormWrapper>
-          {
+          {showSuccessToast && (
             <Toast
               text={successMessage}
               show={showSuccessToast}
               setShow={handleCloseSuccessToast}
             />
-          }
-          {
+          )}
+          {showErrorToast && (
             <Toast
               text={errorMessage}
               show={showErrorToast}
               setShow={handleCloseErrorToast}
               warning={true}
             />
-          }
+          )}
         </StyledSection>
       )) || <Loading />}
     </>
