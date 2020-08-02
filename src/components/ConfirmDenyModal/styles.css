@@ -1,0 +1,17 @@
+.confirm-delete-wrapper {
+  width: fit-content;
+  align-self: center;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--primary);
+}
+
+.options-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirmation-warning {
+  text-align: center;
+}
