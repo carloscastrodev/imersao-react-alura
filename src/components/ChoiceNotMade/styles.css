@@ -1,0 +1,29 @@
+.please-pick-one {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 1.75s;
+}
+
+.please-pick-one img {
+  height: 40%;
+  width: auto;
+}
+
+.no-choice-warning {
+  font-size: 2rem;
+  color: var(--grayLight);
+  text-align: center;
+  margin: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
