@@ -27,10 +27,12 @@ const CategoryNavCarousel = ({
       return 5;
     } else if (width > 1024) {
       return 4;
-    } else if (width > 600) {
+    } else if (width > 680) {
       return 3;
-    } else {
+    } else if (width > 505) {
       return 2;
+    } else {
+      return 1;
     }
   };
 

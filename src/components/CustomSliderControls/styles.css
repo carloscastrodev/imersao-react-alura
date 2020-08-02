@@ -52,3 +52,13 @@
 .next-button:hover * {
   transform: translateX(5%);
 }
+
+@media (max-width: 1024px) {
+  .custom-slider-controls {
+    opacity: 0.5;
+  }
+
+  .slider-control {
+    padding: 6px;
+  }
+}
