@@ -12,7 +12,7 @@ const StyledSection = styled.section`
   background-position-y: 100%;
   background-position-x: 5vw;
   @media (max-width: 756px) {
-    background-size: 40vh;
+    background-size: min(80vw, 40vh);
   }
 `;
 

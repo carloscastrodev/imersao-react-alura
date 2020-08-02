@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   outline: none;
   gap: 5px;
   width: fit-content;
-  min-width: 80px;
+  min-width: 40px;
   height: 32px;
   padding: 8px;
   color: ${({ color }) => color || 'var(--secondary)'};
