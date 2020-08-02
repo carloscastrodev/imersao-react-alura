@@ -5,6 +5,9 @@ const requestConfig = {
 };
 
 const execute = async ({ videoData }) => {
+  for (let key of Object.keys(videoData)) {
+    videoData[key] = videoData[key].replace(/\s+$/, '');
+  }
   const { data } = await api.get(
     `/videosbycategory?category=${videoData.category}`,
   );
