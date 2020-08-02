@@ -29,6 +29,7 @@
   align-items: center;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  text-align: center;
 }
 
 .toast-success {
