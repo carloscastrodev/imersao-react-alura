@@ -140,23 +140,12 @@
       ]
     },
     {
-      "id": 5,
       "category": "Bleach",
       "videos": [
         {
           "id": 1,
           "videoId": "wYn8O5A_XMk",
           "title": "Bleach Amv - Whispers in the Dark"
-        },
-        {
-          "id": 2,
-          "videoId": "ivxEaolBLwI",
-          "title": "Bleach AMV The Demon is a Part of Me"
-        },
-        {
-          "id": 3,
-          "videoId": "SKxGokQWQ3c",
-          "title": "Bleach AMV - Runnin'"
         },
         {
           "id": 4,
@@ -168,7 +157,8 @@
           "videoId": "qJkvZyvbRkw",
           "title": "Bleach AMV - See What I've Become"
         }
-      ]
+      ],
+      "id": 5
     },
     {
       "id": 6,
@@ -202,59 +192,12 @@
       ]
     },
     {
-      "category": "Shingeki no Kyojin",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "fy5FRr1ScAk",
-          "title": "Shingeki no kyojin Attack On Titan - My Demons"
-        },
-        {
-          "id": 2,
-          "videoId": "0HkBhnElh3c",
-          "title": "Levi Ackerman - Attack on Titan AMV - Shatter Me"
-        },
-        {
-          "id": 3,
-          "videoId": "a5f32AnfdEw",
-          "title": "Rise「AMV」Eren vs Reiner"
-        },
-        {
-          "id": 4,
-          "videoId": "JnjnKRIMvKE",
-          "title": "Attack On Titan - Levi Ackerman 「AMV」 My Name"
-        },
-        {
-          "id": 5,
-          "videoId": "eeqqZWwxtJA",
-          "title": "Attack on Titan [AMV] - \"Freedom\""
-        }
-      ],
-      "id": 7
-    },
-    {
-      "category": "Mob Psycho 100",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "-o7EX86J6Bw",
-          "title": "Mob Psycho 100「AMV」 ► Lion"
-        }
-      ],
-      "id": 8
-    },
-    {
       "category": "Overlord",
       "videos": [
         {
           "id": 1,
           "videoId": "y4dlbXukKgM",
           "title": "【AMV】Overlord~♪Leave It All Behind♪ᴴᴰ"
-        },
-        {
-          "id": 2,
-          "videoId": "9lcuLx1Gp-o",
-          "title": "[AMV]Overlord - For the Glory"
         },
         {
           "id": 3,
@@ -273,98 +216,6 @@
         }
       ],
       "id": 9
-    },
-    {
-      "category": "Vinland Saga",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "V-01Q8dTPKo",
-          "title": "Saints | Vinland Saga [amv]"
-        },
-        {
-          "id": 2,
-          "videoId": "UWVCYMN1xuI",
-          "title": "Vinland Saga「AMV」- Born For This"
-        },
-        {
-          "id": 3,
-          "videoId": "mV3iFsc5JyE",
-          "title": "Vinland Saga「AMV」Dreamer ᴴᴰ"
-        }
-      ],
-      "id": 10
-    },
-    {
-      "category": "Kizumonogatari",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "g7XrnHFNHEc",
-          "title": "[AMV] Kizumonogatari - Castle"
-        },
-        {
-          "id": 2,
-          "videoId": "JBvFDOkinhI",
-          "title": "「Kizumonogatari」→We Are The Hearts [AMV]"
-        }
-      ],
-      "id": 11
-    },
-    {
-      "category": "Gangsta",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "7LWFsIzF4OA",
-          "title": "GANGSTA. AMV -Castle of Glass-"
-        }
-      ],
-      "id": 12
-    },
-    {
-      "category": "Koe no Katachi",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "tza_EeTlg7A",
-          "title": "Koe No Katachi (A Silent Voice)「AMV」- Fractures"
-        }
-      ],
-      "id": 13
-    },
-    {
-      "category": "Akame ga Kill!",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "08dVN_MLKAU",
-          "title": "Akame Ga Kill「AMV」- Hope"
-        }
-      ],
-      "id": 14
-    },
-    {
-      "category": "Bakemonogatari",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "hHaXsM-Pu0A",
-          "title": "Bakemonogatari [AMV] Lovers on the sun"
-        }
-      ],
-      "id": 15
-    },
-    {
-      "category": "Re:Zero",
-      "videos": [
-        {
-          "id": 1,
-          "videoId": "YL1Nbk16hv8",
-          "title": "Re:Zero「AMV」- Cage The Beast ᴴᴰ"
-        }
-      ],
-      "id": 16
     }
   ]
 }
