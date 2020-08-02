@@ -6,10 +6,13 @@ import logo from '../../../assets/logo.png';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import ButtonLink from '../../ButtonLink';
+import useWindowDimensions from '../../hooks/windowDimensions';
 
 const Header = () => {
   const [noHeaderBackground, setNoHeaderBackground] = useState(true);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const { width } = useWindowDimensions();
+  const isSmallMobile = width < 540;
   useEffect(() => {
     window.addEventListener('scroll', changeHeaderBackground, false);
   }, []);
@@ -43,13 +46,13 @@ const Header = () => {
               <span role="img" aria-label="Sinal de edição">
                 <FiEdit size={'1.2rem'} />
               </span>
-              <p>MANAGE</p>
+              {!isSmallMobile && <p>MANAGE</p>}
             </ButtonLink>
             <ButtonLink to="/newvideo">
               <span role="img" aria-label="Sinal de mais">
                 <FaPlus size={'1.2rem'} />
               </span>
-              <p>UPLOAD</p>
+              {!isSmallMobile && <p>UPLOAD</p>}
             </ButtonLink>
           </div>
         </nav>

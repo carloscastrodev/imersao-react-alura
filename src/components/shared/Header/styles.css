@@ -58,7 +58,7 @@
   justify-content: center;
   padding: 0;
   top: 0;
-  right: 1.5%;
+  right: 0.5%;
   background: none;
   border: none;
   outline: none;
@@ -94,5 +94,23 @@
   .hide-header-button {
     display: none;
     transform: translateX(100%);
+  }
+}
+
+@media (max-width: 540px) {
+  .nav-buttons-wrapper {
+    width: 90px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-logo-link {
+    width: 70%;
+    height: auto;
+  }
+
+  .nav-logo {
+    width: 70%;
+    height: auto;
   }
 }
