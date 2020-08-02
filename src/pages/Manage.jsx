@@ -9,6 +9,8 @@ import ManageVideoHighlight from '../components/ManageVideoHighlight';
 import DeleteVideoService from '../services/DeleteVideoService';
 import Toast from '../components/Toast';
 import useOnMount from '../components/hooks/onMount';
+import UnderConstruction from '../components/UnderConstruction';
+import useWindowDimensions from '../components/hooks/windowDimensions';
 
 const Manage = () => {
   const [videosByCategoryList, setVideosByCategoryList] = useState([]);
@@ -20,6 +22,7 @@ const Manage = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [categoriesData, setCategoriesData] = useState([]);
+  const { width, height } = useWindowDimensions();
   let timeoutId = useRef();
 
   useOnMount(() => {
@@ -133,49 +136,57 @@ const Manage = () => {
 
   return (
     <>
-      {(videosByCategoryList.length > 0 && (
-        <div className="manage-page-container">
-          <StyledSection className="section-header-padding full-view-section flex">
-            {(chosenCategoryVideos.length > 0 && (
-              <VerticalCardSlider
-                videos={chosenCategoryVideos}
-                highlightedCategory={highlightedCategory}
-                highlightedVideo={highlightedVideo}
-                setHighlightedVideo={handleChangeHighlightedVideo}
-              />
-            )) || <ChoiceNotMade text="Escolha um anime abaixo" />}
-            {(highlightedVideo && (
-              <ManageVideoHighlight
-                highlightedVideo={highlightedVideo}
-                deleteVideoCallback={deleteVideo}
-              />
-            )) ||
-              (highlightedCategory && (
-                <ChoiceNotMade text="Escolha um AMV ao lado" />
-              ))}
-            <CategoryNavCarousel
-              categoriesData={categoriesData}
-              handleChangeHighlightedCategory={handleChangeHighlightedCategory}
-              highlightedCategory={highlightedCategory}
-            />
-            {showSuccessToast && (
-              <Toast
-                text={successMessage}
-                show={showSuccessToast}
-                setShow={handleCloseSuccessToast}
-              />
-            )}
-            {showErrorToast && (
-              <Toast
-                text={errorMessage}
-                show={showErrorToast}
-                setShow={handleCloseErrorToast}
-                warning={true}
-              />
-            )}
-          </StyledSection>
-        </div>
-      )) || <Loading />}
+      {((width < 800 || height < 760) && (
+        <UnderConstruction customText="Essa página não é otimizada para a sua tela 😢" />
+      )) || (
+        <>
+          {(videosByCategoryList.length > 0 && (
+            <div className="manage-page-container">
+              <StyledSection className="section-header-padding full-view-section flex">
+                {(chosenCategoryVideos.length > 0 && (
+                  <VerticalCardSlider
+                    videos={chosenCategoryVideos}
+                    highlightedCategory={highlightedCategory}
+                    highlightedVideo={highlightedVideo}
+                    setHighlightedVideo={handleChangeHighlightedVideo}
+                  />
+                )) || <ChoiceNotMade text="Escolha um anime abaixo" />}
+                {(highlightedVideo && (
+                  <ManageVideoHighlight
+                    highlightedVideo={highlightedVideo}
+                    deleteVideoCallback={deleteVideo}
+                  />
+                )) ||
+                  (highlightedCategory && (
+                    <ChoiceNotMade text="Escolha um AMV ao lado" />
+                  ))}
+                <CategoryNavCarousel
+                  categoriesData={categoriesData}
+                  handleChangeHighlightedCategory={
+                    handleChangeHighlightedCategory
+                  }
+                  highlightedCategory={highlightedCategory}
+                />
+                {showSuccessToast && (
+                  <Toast
+                    text={successMessage}
+                    show={showSuccessToast}
+                    setShow={handleCloseSuccessToast}
+                  />
+                )}
+                {showErrorToast && (
+                  <Toast
+                    text={errorMessage}
+                    show={showErrorToast}
+                    setShow={handleCloseErrorToast}
+                    warning={true}
+                  />
+                )}
+              </StyledSection>
+            </div>
+          )) || <Loading />}
+        </>
+      )}
     </>
   );
 };
