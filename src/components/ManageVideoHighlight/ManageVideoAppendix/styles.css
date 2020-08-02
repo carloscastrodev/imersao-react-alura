@@ -1,0 +1,17 @@
+.fluid-iframe-appendix {
+  color: var(--grayLight);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10rem;
+}
+
+.fluid-iframe-appendix > h2 {
+  margin: 0;
+}
+
+.fluid-iframe-appendix > button {
+  margin-top: 12px;
+}
