@@ -7,7 +7,7 @@ import useWindowDimensions from '../hooks/windowDimensions';
 import CategoryNavCard from './CategoryNavCard';
 
 const CategoryNavCarousel = ({
-  categoriesTitles,
+  categoriesData,
   handleChangeHighlightedCategory,
   highlightedCategory,
 }) => {
@@ -34,7 +34,7 @@ const CategoryNavCarousel = ({
     }
   };
 
-  const isSlideInfinite = getSlidesToShow() < categoriesTitles.length;
+  const isSlideInfinite = getSlidesToShow() < categoriesData.length;
 
   return (
     <nav className="categories-nav">
@@ -45,12 +45,13 @@ const CategoryNavCarousel = ({
         infinite={isSlideInfinite}
         className="categories-nav-list"
       >
-        {categoriesTitles.map(anime => (
-          <li key={AnimationEvent}>
+        {categoriesData.map((category, index) => (
+          <li key={AnimationEvent} data-index={index}>
             <CategoryNavCard
               handleChangeHighlightedCategory={handleChangeHighlightedCategory}
-              categoryTitle={anime}
+              categoryTitle={category.categoryTitle}
               highlightedCategory={highlightedCategory}
+              thumbImgVideoId={category.thumbImgVideoId}
             />
           </li>
         ))}

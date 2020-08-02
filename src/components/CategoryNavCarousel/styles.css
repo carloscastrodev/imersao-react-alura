@@ -1,17 +1,18 @@
 .categories-nav {
-  height: 120px;
+  height: 20%;
   position: absolute;
   bottom: 20px;
   background: var(--contrast);
   width: 100%;
+  padding-top: 5px;
 }
 
 .categories-nav-list {
-  height: 120px;
+  height: 95%;
 }
 
 .categories-nav-list * {
-  height: 120px;
+  height: 100%;
 }
 
 .categories-nav > .custom-slider-controls {
