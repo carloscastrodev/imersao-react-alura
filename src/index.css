@@ -47,6 +47,10 @@ a {
   color: inherit;
 }
 
+.flex {
+  display: flex !important;
+}
+
 .column-flex {
   display: flex !important;
   flex-direction: column !important;
@@ -79,4 +83,23 @@ a {
   margin: 0 5vw 0 5vw;
   position: relative;
   height: 100%;
+}
+
+.slick-list {
+  padding: 0 50px;
+}
+
+.full-view-section {
+  height: calc(100vh - var(--footerHeight)) !important;
+}
+
+.spinner {
+  color: var(--secondary) !important;
+}
+
+@media (max-width: 280px) {
+  html,
+  body {
+    font-size: 10px;
+  }
 }
