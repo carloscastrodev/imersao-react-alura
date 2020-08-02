@@ -5,7 +5,7 @@ import ButtonLink from '../ButtonLink';
 import { FaArrowLeft } from 'react-icons/fa';
 import useOnMount from '../hooks/onMount';
 
-const UnderConstruction = () => {
+const UnderConstruction = ({ customText }) => {
   const [imageToRender, setImageToRender] = useState('');
 
   useOnMount(() => {
@@ -37,7 +37,9 @@ const UnderConstruction = () => {
   return (
     <StyledSection firstSection={true} className="column-flex center">
       <p className="under-construction-warning">
-        Essa página não existe ou ainda está sendo construida.
+        {customText
+          ? customText
+          : 'Essa página não existe ou ainda está sendo construida.'}
       </p>
       <ButtonLink to={'/'}>
         <span role="img" aria-label="Flecha p/ esquerda">
