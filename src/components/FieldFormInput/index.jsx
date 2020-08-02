@@ -50,8 +50,13 @@ const FieldFormInput = ({
   };
 
   const handleChangeInputValue = e => {
-    const { value } = e.target;
+    let { value } = e.target;
+    value = value.replace(/\s\s+/g, ' ');
+    value = value.replace(/^\s/, '');
 
+    if (value === ' ') {
+      value = '';
+    }
     if (value !== '') {
       setFieldsValues(
         Object.assign({}, { ...fieldsValues }, { [dbKey]: value }),
@@ -86,7 +91,7 @@ const FieldFormInput = ({
           required={required}
         />
       </div>
-      {warningText && (
+      {showWarningToast && (
         <Toast
           text={warningText}
           show={showWarningToast}
