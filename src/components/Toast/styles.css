@@ -9,9 +9,12 @@
   height: 48px;
   border-radius: 10px;
   transition: all 0.4s ease-out;
-  background-color: white;
+  background-color: var(--contrast);
   display: flex;
   align-items: center;
+  justify-content: center;
+  animation: slide-in-from-bottom 0.5s ease-out;
+  width: 100%;
 }
 
 .toast {
@@ -20,6 +23,12 @@
   font-weight: bold;
   letter-spacing: 2px;
   padding: 5px;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .toast-success {
@@ -61,4 +70,13 @@
 
 .hide-toast {
   bottom: -100px;
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: calc(var(--footerHeight) + 8px);
+  }
 }
