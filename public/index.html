@@ -53,5 +53,19 @@
 
   <body>
     <div id="root"></div>
+    <!-- Android Keyboard Viewport workaround-->
+    <script type="text/javascript">
+      var isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1; //&& ua.indexOf("mobile");
+      if (isAndroid) {
+        document
+          .querySelector('meta[name=viewport]')
+          .setAttribute(
+            'content',
+            'width=device-width,height=' +
+              window.innerHeight +
+              ', initial-scale=1.0">',
+          );
+      }
+    </script>
   </body>
 </html>
