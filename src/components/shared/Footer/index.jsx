@@ -22,7 +22,7 @@ const Footer = () => {
         <ul className="social-links-list">
           <li className="social-links-item">
             <a
-              href="https://github.com/AdmiralChopper"
+              href="https://github.com/carloscastrodev"
               target="_blank"
               rel="noopener noreferrer"
               className="outer-link"
