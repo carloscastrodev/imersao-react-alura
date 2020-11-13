@@ -136,7 +136,7 @@ const Manage = () => {
 
   return (
     <>
-      {((width < 768 || height < 640) && (
+      {((width < 800 || height < 760) && (
         <UnderConstruction customText="Essa página não é otimizada para a sua tela 😢" />
       )) || (
         <>
